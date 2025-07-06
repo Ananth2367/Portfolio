@@ -1,0 +1,568 @@
+/* Base Styles */
+:root {
+  --primary-light: #f0f8ff;
+  --accent-blue: #a2d2ff;
+  --accent-lavender: #cdb4db;
+  --text-dark: #333333;
+  --text-medium: #555555;
+  --text-light: #777777;
+}
+
+body {
+  font-family: 'Poppins', sans-serif;
+  background-color: var(--primary-light);
+  color: var(--text-dark);
+  line-height: 1.6;
+}
+
+/* Glassmorphism Base */
+.glass-panel {
+  background: rgba(255, 255, 255, 0.2);
+  backdrop-filter: blur(10px);
+  -webkit-backdrop-filter: blur(10px);
+  border: 1px solid rgba(255, 255, 255, 0.3);
+  border-radius: 16px;
+  box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
+}
+
+/* Layout */
+.portfolio-container {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 2rem;
+  display: grid;
+  gap: 2rem;
+}
+
+/* Hero Section */
+.portfolio-hero {
+  padding: 3rem 2rem;
+  text-align: center;
+  background: linear-gradient(135deg, 
+              rgba(162, 210, 255, 0.2) 0%, 
+              rgba(205, 180, 219, 0.15) 100%);
+}
+
+.portfolio-title {
+  font-size: 3rem;
+  font-weight: 700;
+  margin-bottom: 0.5rem;
+  background: linear-gradient(to right, #3a7bd5, #00d2ff);
+  -webkit-background-clip: text;
+  background-clip: text;
+  color: transparent;
+}
+
+.portfolio-subtitle {
+  font-size: 1.5rem;
+  color: var(--text-medium);
+  margin-bottom: 1.5rem;
+}
+
+.contact-links {
+  display: flex;
+  justify-content: center;
+  gap: 1rem;
+  flex-wrap: wrap;
+}
+
+.contact-link {
+  color: var(--text-dark);
+  transition: color 0.3s;
+}
+
+.contact-link:hover {
+  color: var(--accent-blue);
+}
+
+.contact-separator {
+  color: var(--text-light);
+}
+
+/* Summary Section */
+.summary-section {
+  padding: 2rem;
+}
+
+.section-title {
+  font-size: 2rem;
+  margin-bottom: 1.5rem;
+  color: var(--text-dark);
+  position: relative;
+}
+
+.section-title::after {
+  content: '';
+  position: absolute;
+  left: 0;
+  bottom: -8px;
+  width: 60px;
+  height: 3px;
+  background: var(--accent-blue);
+}
+
+.summary-content {
+  padding: 1rem 0;
+}
+
+.summary-highlights {
+  margin-top: 1rem;
+  padding-left: 1.5rem;
+}
+
+.summary-highlights li {
+  margin-bottom: 0.8rem;
+  position: relative;
+  list-style-type: none;
+  padding-left: 1.5rem;
+}
+
+.summary-highlights li::before {
+  content: '▹';
+  position: absolute;
+  left: 0;
+  color: var(--accent-blue);
+}
+
+/* Skills Section */
+.skills-section {
+  padding: 2rem;
+}
+
+.skill-category {
+  margin-bottom: 1.5rem;
+}
+
+.category-title {
+  font-size: 1.3rem;
+  margin-bottom: 1rem;
+  color: var(--text-dark);
+}
+
+.skills-grid {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.8rem;
+}
+
+.skill-badge {
+  padding: 0.5rem 1rem;
+  border-radius: 999px;
+  font-size: 0.9rem;
+  font-weight: 500;
+}
+
+.frontend {
+  background: rgba(162, 210, 255, 0.3);
+  color: #1e4b8f;
+}
+
+.backend {
+  background: rgba(205, 180, 219, 0.3);
+  color: #5d3a7a;
+}
+
+.language {
+  background: rgba(183, 228, 199, 0.3);
+  color: #2a6b46;
+}
+
+.database {
+  background: rgba(255, 229, 182, 0.3);
+  color: #9c6e1a;
+}
+
+.tool {
+  background: rgba(255, 182, 193, 0.3);
+  color: #a83a4a;
+}
+.ai {
+  background: rgba(213, 232, 255, 0.3);
+  color: #3b5f8a;
+}
+
+/* Projects Section */
+.projects-section {
+  padding: 2rem;
+}
+
+.projects-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+  gap: 1.5rem;
+}
+
+.project-card {
+  padding: 1.5rem;
+  transition: transform 0.3s;
+}
+
+.project-card:hover {
+  transform: translateY(-5px);
+}
+
+.project-card h3 {
+  font-size: 1.3rem;
+  margin-bottom: 0.8rem;
+  color: var(--text-dark);
+}
+
+.project-skills {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.5rem;
+  margin-top: 1rem;
+}
+
+.skill-tag {
+  padding: 0.3rem 0.8rem;
+  background: rgba(162, 210, 255, 0.3);
+  border-radius: 999px;
+  font-size: 0.8rem;
+}
+
+/* Animations */
+.animate-fadein {
+  animation: fadeIn 0.8s ease-out forwards;
+}
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+  .portfolio-title {
+    font-size: 2.2rem;
+  }
+  
+  .portfolio-subtitle {
+    font-size: 1.2rem;
+  }
+  
+  .projects-grid {
+    grid-template-columns: 1fr;
+  }
+}
+
+
+/* Add this to your style.css */
+
+/* Header/Navbar spacing */
+header {
+  margin-bottom: 2rem; /* Adds space below navbar */
+}
+
+/* OR for more precise control: */
+.portfolio-hero {
+  margin-top: 4rem; /* Pushes hero section down from navbar */
+  padding-top: 2rem; /* Additional internal spacing */
+}
+
+/* If using fixed navbar: */
+body {
+  padding-top: 80px; /* Must match navbar height */
+}
+
+header {
+  position: fixed;
+  top: 0;
+  width: 100%;
+  height: 80px; /* Set explicit navbar height */
+  z-index: 1000;
+}
+
+/* Add this to your style.css */
+
+/* Header/Navbar spacing */
+header {
+  margin-bottom: 2rem; /* Adds space below navbar */
+}
+
+/* OR for more precise control: */
+.portfolio-hero {
+  margin-top: 4rem; /* Pushes hero section down from navbar */
+  padding-top: 2rem; /* Additional internal spacing */
+}
+
+/* If using fixed navbar: */
+body {
+  padding-top: 80px; /* Must match navbar height */
+}
+
+header {
+  position: fixed;
+  top: 0;
+  width: 100%;
+  height: 80px; /* Set explicit navbar height */
+  z-index: 1000;
+}
+body {
+  padding-top: 80px; /* Match navbar height */
+}
+
+header {
+  position: fixed;
+  top: 0;
+  width: 100%;
+  height: 80px;
+  z-index: 1000;
+  /* Your existing glass styles */
+}
+
+.portfolio-hero {
+  margin-top: 1rem; /* Small buffer */
+}
+
+/* Contact Section */
+.contact-section {
+  padding: 2rem;
+  max-width: 500px;
+  margin: 2rem auto;
+}
+
+.contact-form {
+  display: grid;
+  gap: 1.5rem;
+}
+
+.form-group {
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+}
+
+.glass-input {
+  background: rgba(255, 255, 255, 0.3);
+  backdrop-filter: blur(5px);
+  border: 2px solid rgba(99, 149, 214, 0.6); /* Darker blue border with more opacity */
+  border-radius: 8px;
+  padding: 0.8rem 1rem;
+  color: #333;
+  transition: all 0.3s ease;
+  box-shadow: 
+    0 2px 4px rgba(0, 0, 0, 0.1),
+    inset 0 1px 1px rgba(255, 255, 255, 0.2); /* Inner glow for depth */
+}
+
+/* Focus state */
+.glass-input:focus {
+  border-color: #2563eb; /* Even darker blue when focused */
+  box-shadow: 
+    0 0 0 3px rgba(37, 99, 235, 0.2),
+    inset 0 1px 2px rgba(255, 255, 255, 0.3);
+}
+
+/* Placeholder */
+.glass-input::placeholder {
+  color: #4b5563; /* Darker placeholder text */
+}
+/* Hover state */
+.glass-input:hover {
+  background: rgba(255, 255, 255, 0.4);
+}
+
+/* Label emphasis */
+label {
+  font-weight: 500;
+  color: #444;
+}
+.submit-btn {
+  background: rgba(162, 210, 255, 0.7);
+  color: white;
+  border: none;
+  padding: 0.8rem;
+  border-radius: 8px;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  font-weight: 500;
+  margin-top: 0.5rem;
+}
+
+.submit-btn:hover {
+  background: rgba(162, 210, 255, 0.9);
+}
+
+/* Footer Styles */
+footer {
+  backdrop-filter: blur(10px);
+  border-top: 1px solid rgba(255, 255, 255, 0.2);
+}
+
+.social-icon {
+  width: 40px;
+  height: 40px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: rgba(255, 255, 255, 0.1);
+  border-radius: 50%;
+  transition: all 0.3s ease;
+}
+
+.social-icon:hover {
+  background: rgba(162, 210, 255, 0.3);
+  transform: translateY(-3px);
+}
+
+.social-icon svg {
+  width: 20px;
+  height: 20px;
+  color: #3b82f6; /* Bright blue for visibility */
+  transition: color 0.3s ease;
+}
+
+/* Specific icon colors */
+
+.social-icon[href*="linkedin"] svg {
+  color: #0a66c2; /* LinkedIn blue */
+}
+
+.social-icon[href^="mailto"] svg {
+  color: #ea4335; /* Gmail red */
+}
+
+.social-icon:hover svg {
+  color: #a2d2ff; /* Your accent blue on hover */
+  transform: scale(1.1);
+}
+
+.social-icon:hover svg {
+  color: var(--accent-blue);
+}
+
+/* ===== Base Styles ===== */
+body {
+  font-family: 'Poppins', sans-serif;
+  background: linear-gradient(135deg, #f5f7fa 0%, #e2f3fd 100%);
+  color: #333;
+  line-height: 1.6;
+}
+
+/* ===== Glassmorphism Effects ===== */
+.glass-panel {
+  background: rgba(255, 255, 255, 0.15);
+  backdrop-filter: blur(10px);
+  -webkit-backdrop-filter: blur(10px);
+  border: 1px solid rgba(255, 255, 255, 0.2);
+  box-shadow: 0 8px 32px 0 rgba(31, 38, 135, 0.1);
+}
+
+.glass-card {
+  background: rgba(255, 255, 255, 0.2);
+  backdrop-filter: blur(5px);
+  border: 1px solid rgba(255, 255, 255, 0.3);
+}
+
+/* ===== Header/Navigation ===== */
+/* Mobile Menu Animation */
+.animate-fadeIn {
+  animation: fadeIn 0.3s ease-out forwards;
+}
+
+@keyframes fadeIn {
+  from { opacity: 0; transform: translateY(-10px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+/* Nav Links */
+.nav-link {
+  transition: all 0.3s ease;
+}
+
+.nav-link:hover {
+  transform: translateY(-2px);
+}
+
+/* ===== Footer ===== */
+.social-icon {
+  background: rgba(255, 255, 255, 0.2);
+  border-radius: 50%;
+  padding: 0.5rem;
+  transition: all 0.3s ease;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  min-width: 40px;
+  min-height: 40px;
+}
+
+.social-icon:hover {
+  background: rgba(255, 255, 255, 0.3);
+  transform: translateY(-3px) scale(1.1);
+}
+
+/* ===== Input Fields ===== */
+.glass-input {
+  background: rgba(255, 255, 255, 0.3);
+  border: 2px solid rgba(99, 149, 214, 0.6);
+  border-radius: 8px;
+  padding: 0.8rem 1rem;
+  color: #333;
+  transition: all 0.3s ease;
+  box-shadow: 
+    0 2px 4px rgba(0, 0, 0, 0.1),
+    inset 0 1px 1px rgba(255, 255, 255, 0.2);
+}
+
+.glass-input:focus {
+  border-color: #2563eb;
+  box-shadow: 
+    0 0 0 3px rgba(37, 99, 235, 0.2),
+    inset 0 1px 2px rgba(255, 255, 255, 0.3);
+}
+
+/* ===== Mobile Responsiveness ===== */
+@media (max-width: 767px) {
+  /* Header adjustments */
+  .portfolio-title {
+    font-size: 1.8rem;
+  }
+
+  /* Mobile menu items */
+  .mobile-nav-link {
+    padding: 12px 16px;
+    font-size: 1.1rem;
+  }
+
+  /* Footer adjustments */
+  .social-icon {
+    min-width: 36px;
+    min-height: 36px;
+    padding: 0.4rem;
+  }
+
+  /* Input fields */
+  .glass-input {
+    padding: 0.7rem 1rem;
+  }
+}
+
+/* Very small screens */
+@media (max-width: 480px) {
+  .portfolio-title {
+    font-size: 1.5rem;
+  }
+
+  .glass-panel {
+    padding: 1rem;
+  }
+}
+
+/* ===== Utility Classes ===== */
+.transition-all {
+  transition-property: all;
+  transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
+  transition-duration: 200ms;
+}
+
+.hover\:scale-105:hover {
+  transform: scale(1.05);
+}

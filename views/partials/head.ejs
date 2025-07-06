@@ -1,0 +1,39 @@
+<meta charset="UTF-8">
+<!-- Enhanced viewport for mobile devices -->
+<meta name="viewport" content="width=device-width, initial-scale=1.0, minimum-scale=1.0, maximum-scale=5.0, viewport-fit=cover">
+<meta name="apple-mobile-web-app-capable" content="yes">
+
+<title><%= portfolioData.name %> | Portfolio</title>
+
+<!-- Tailwind with mobile-first configuration -->
+<script src="https://cdn.tailwindcss.com"></script>
+<script>
+  tailwind.config = {
+    theme: {
+      extend: {
+        screens: {
+          'xs': '480px',  // Extra small devices
+          'md': '768px'   // Tablets and up
+        },
+        fontFamily: {
+          sans: ['Poppins', 'sans-serif'] // Integrates your Poppins font
+        }
+      }
+    }
+  }
+</script>
+
+<!-- Preload critical resources -->
+<link rel="preload" href="/css/styles.css" as="style">
+<link rel="preload" href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600&display=swap" as="font" crossorigin>
+
+<!-- Your existing stylesheets -->
+<link rel="stylesheet" href="/css/styles.css">
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600&display=swap" rel="stylesheet">
+
+<!-- Preconnect to external domains -->
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+
+<!-- Favicon (optional but recommended) -->
+<link rel="icon" href="/favicon.ico" type="image/x-icon">

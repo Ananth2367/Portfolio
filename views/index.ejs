@@ -1,0 +1,163 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <%- include('partials/head') %>
+</head>
+<body class="portfolio-body">
+  <!-- Header Partial -->
+  <%- include('partials/header') %>
+
+  <main class="portfolio-container">
+    <!-- Hero Section -->
+    <section id="hero" class="portfolio-hero glass-panel">
+      <h1 class="portfolio-title"><%= portfolioData.name %></h1>
+      <h2 class="portfolio-subtitle"><%= portfolioData.title %></h2>
+      
+      <div class="contact-links">
+        <a href="mailto:<%= portfolioData.email %>" class="contact-link">
+          <%= portfolioData.email %>
+        </a>
+        <span class="contact-separator">|</span>
+        <a href="tel:<%= portfolioData.phone %>" class="contact-link">
+          <%= portfolioData.phone %>
+        </a>
+      </div>
+    </section>
+
+
+    <!-- Summary Section -->
+      <section id="summary" class="summary-section glass-panel animate-fadein">
+        <h2 class="section-title">Professional Summary</h2>
+        <div class="summary-content">
+          <p>
+            A passionate and driven B.Tech Computer Science student specializing in Artificial Intelligence and Machine Learning, 
+            with hands-on experience in Java, Spring Boot, and full-stack web development. Proven track record as a mentor, 
+            having guided over 120 students in Data Structures and Algorithms at Smart Interviews.
+          </p>
+          <ul class="summary-highlights">
+            <li>Developed real-world applications including cancer prediction system and inventory management systems</li>
+            <li>Ranked top 10 in college coding competitions and globally ranked 1405 in CodeChef Starters</li>
+            <li>Built ML models with 90%+ accuracy and Java-based enterprise solutions</li>
+            <li>Seeking dynamic software engineering roles to leverage technical and leadership skills</li>
+          </ul>
+        </div>
+      </section>
+
+    <!-- Skills Section -->
+    <section id="skills" class="skills-section glass-panel animate-fadein">
+      <h2 class="section-title">Technical Skills</h2>
+      
+      <!-- Frontend Technologies -->
+      <div class="skill-category">
+        <h3 class="category-title">Frontend</h3>
+        <div class="skills-grid">
+          <% portfolioData.skills.frontend.forEach(skill => { %>
+            <span class="skill-badge frontend"><%= skill %></span>
+          <% }); %>
+        </div>
+      </div>
+
+      <!-- Backend Technologies -->
+      <div class="skill-category">
+        <h3 class="category-title">Backend</h3>
+        <div class="skills-grid">
+          <% portfolioData.skills.backend.forEach(skill => { %>
+            <span class="skill-badge backend"><%= skill %></span>
+          <% }); %>
+        </div>
+      </div>
+
+      <!-- Programming Languages -->
+      <div class="skill-category">
+        <h3 class="category-title">Programming Languages</h3>
+        <div class="skills-grid">
+          <% portfolioData.skills.languages.forEach(skill => { %>
+            <span class="skill-badge language"><%= skill %></span>
+          <% }); %>
+        </div>
+      </div>
+
+      <!-- Databases -->
+      <div class="skill-category">
+        <h3 class="category-title">Databases</h3>
+        <div class="skills-grid">
+          <% portfolioData.skills.databases.forEach(skill => { %>
+            <span class="skill-badge database"><%= skill %></span>
+          <% }); %>
+        </div>
+      </div>
+      <div class="skill-category">
+        <h3 class="category-title">AI Framework</h3>
+        <div class="skills-grid">
+          <% portfolioData.skills.ai_frameworks.forEach(skill => { %>
+            <span class="skill-badge ai"><%= skill %></span>
+          <% }); %>
+        </div>
+      </div>
+      <!-- Tools -->
+      <div class="skill-category">
+        <h3 class="category-title">Tools</h3>
+        <div class="skills-grid">
+          <% portfolioData.skills.tools.forEach(skill => { %>
+            <span class="skill-badge tool"><%= skill %></span>
+          <% }); %>
+        </div>
+      </div>
+    </section>
+
+    <!-- Projects Section -->
+    <section id="projects" class="projects-section glass-panel animate-fadein">
+      <h2 class="section-title">Projects</h2>
+      <div class="projects-grid">
+        <% portfolioData.projects.forEach(project => { %>
+          <div class="project-card">
+            <h3><%= project.name %></h3>
+            <p><%= project.desc %></p>
+            <div class="project-skills">
+              <% project.skills.forEach(skill => { %>
+                <span class="skill-tag"><%= skill %></span>
+              <% }); %>
+            </div>
+          </div>
+        <% }); %>
+      </div>
+    </section>
+
+  <!-- Updated Contact Form Section -->
+  <section id="contact" class="glass-panel p-8 rounded-2xl animate-fadein">
+    <h2 class="text-3xl font-bold mb-6 border-b-2 border-gray-300 pb-2">Get In Touch</h2>
+    <form class="space-y-6" action="/contact" method="POST">
+      <div class="space-y-2">
+        <label class="block text-gray-700">Your Name</label>
+        <input 
+          type="text" 
+          name="name" 
+          required 
+          class="w-full glass-input p-4 rounded-lg focus:ring-2 focus:ring-blue-500"
+        >
+      </div>
+      
+      <div class="space-y-2">
+        <label class="block text-gray-700">Email</label>
+        <input 
+          type="email" 
+          name="email" 
+          required 
+          class="w-full glass-input p-4 rounded-lg focus:ring-2 focus:ring-blue-500"
+        >
+      </div>
+      
+      <button 
+        type="submit" 
+        class="w-full bg-blue-600 text-white px-6 py-3 rounded-lg hover:bg-blue-700 transition duration-300"
+      >
+        Submit
+      </button>
+    </form>
+  </section>
+  </main>
+
+  <!-- Footer Partial -->
+  <%- include('partials/footer') %>
+</body>
+</html>
