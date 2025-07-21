@@ -39,16 +39,21 @@ const portfolioData = {
     ai_frameworks:["Spring Ai"]
   },
   projects: [
-    { 
-      name: "Cancer Prediction System", 
-      desc: "ML model with 90% accuracy using Random Forest.", 
-      skills: ["Python", "Pandas", "Scikit-learn"] 
+    {
+      "name": "Personal Portfolio Website",
+      "desc": "Developed a full-stack portfolio website to showcase academic profile, skills, and projects. Implemented responsive glassmorphism UI, dynamic EJS rendering, and a Nodemailer-powered contact form with resume attachment.",
+      "skills": ["Node.js", "Express.js", "EJS", "Tailwind CSS", "HTML/CSS", "JavaScript", "Nodemailer"]
     },
-    { 
-      name: "Inventory Management System", 
-      desc: "Java-based system with low-stock alerts.", 
-      skills: ["Java", "MySQL", "HTML/CSS"] 
+    {
+      "name": "RoamNest – Property Listing Platform",
+      "desc": "Created a full-stack web application for posting and managing property listings with CRUD operations, RESTful APIs, and dynamic EJS rendering. Designed a responsive, mobile-friendly UI with Bootstrap and implemented MVC architecture.",
+      "skills": ["Node.js", "Express.js", "MongoDB", "EJS", "Bootstrap"]
     },
+    {
+      "name": "E-Commerce Platform",
+      "desc": "Built a feature-rich e-commerce platform with Spring Boot backend and React.js frontend. Enabled product management with image upload, RESTful APIs, PostgreSQL integration, and theme toggle. Emphasized clean MVC design and responsive UI.",
+      "skills": ["Spring Boot", "Java", "React.js", "PostgreSQL", "REST APIs", "Bootstrap"]
+    }
   ],
   achievements: [
     "Global Rank 1405 in CodeChef Starters 170",
