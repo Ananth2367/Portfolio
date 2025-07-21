@@ -113,8 +113,8 @@ app.post("/contact",(req,res)=>{
   `,
   attachments: [
     {
-      filename: 'Ananth_Resume.pdf',
-      path: path.join(__dirname, 'public/resume/Ananth_Dev_Prajapat.pdf'), // Path to your resume
+      filename: 'Ananth_Dev_Prajapat.pdf',
+      path: path.join(__dirname, 'public/resume/Ananth _Dev_Prajapat.pdf'), // Path to your resume
       contentType: 'application/pdf'
     }
   ]
