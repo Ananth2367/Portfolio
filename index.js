@@ -25,6 +25,7 @@ const portfolioData = {
   email: "ananthdevprajapat@gmail.com",
   phone: "+91 6303586891",
   linkedin: "https://www.linkedin.com/in/ananth-dev-prajapat-a59658257/",
+  github: "https://github.com/Ananth2367",
   education: [
     { degree: "B.Tech AI/ML", institution: "CMR Technical Campus", score: "CGPA: 8.59/10" },
     { degree: "12th", institution: "CBSE", score: "96.8%" },
