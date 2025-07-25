@@ -24,7 +24,7 @@ const portfolioData = {
   title: "Bachelor's of Technology in Artificial Intelligence and Machine learning",
   email: "ananthdevprajapat@gmail.com",
   phone: "+91 6303586891",
-  linkedin: "https://linkedin.com/in/ananth-dev-prajapat-a596582577",
+  linkedin: "https://www.linkedin.com/in/ananth-dev-prajapat-a59658257/",
   education: [
     { degree: "B.Tech AI/ML", institution: "CMR Technical Campus", score: "CGPA: 8.59/10" },
     { degree: "12th", institution: "CBSE", score: "96.8%" },
